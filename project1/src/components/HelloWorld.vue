@@ -28,6 +28,7 @@ export default {
         });
         let imageprovider = new TDTWMTSImageProvider(
           "http://ad.breton.top:8008/export/test/image/{z}/{x}/{y}.png",
+          // "http://zjhczl.xyz:6080/arcgis/rest/services/wmts/MyMapService/MapServer/tile/{z}/{y}/{x}",
           false,
           1,
           16,
