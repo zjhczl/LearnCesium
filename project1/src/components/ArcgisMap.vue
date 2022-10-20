@@ -1,0 +1,20 @@
+<template>
+  <div id="cesiumContainer"></div>
+</template>
+
+<script setup>
+import { onMounted } from "vue";
+
+onMounted(() => {
+  const viewer = new Cesium.Viewer("cesiumContainer", {
+    imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+      url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+    }),
+    baseLayerPicker: false,
+    infoBox: false,
+  });
+});
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped></style>

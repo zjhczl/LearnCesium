@@ -14,7 +14,7 @@ const czml = [
     id: "point 1",
     name: "point",
     position: {
-      cartographicDegrees: [-111.0, 40.0, 0],
+      cartographicDegrees: [121.2, 31.4, 0],
     },
     point: {
       color: {
