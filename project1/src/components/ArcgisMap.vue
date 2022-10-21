@@ -8,7 +8,8 @@ import { onMounted } from "vue";
 onMounted(() => {
   const viewer = new Cesium.Viewer("cesiumContainer", {
     imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
-      url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+      // url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+      url: "http://www.zjhczl.xyz:6080/arcgis/rest/services/jwd/MyMapService/MapServer",
     }),
     baseLayerPicker: false,
     infoBox: false,

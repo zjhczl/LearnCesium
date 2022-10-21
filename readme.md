@@ -54,7 +54,7 @@ npm install cesium -S
 
 ```javascript
 module.exports = {
-  publicPath: "./",
+  publicPath: "/",
   chainWebpack: (config) => {
     config.module
       .rule("worker")

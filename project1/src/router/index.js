@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+// import HomeView from "../views/HomeView.vue";
 import HelloWorld from "../components/HelloWorld.vue";
 import ArcgisMap from "../components/ArcgisMap.vue";
 const routes = [
