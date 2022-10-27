@@ -3,32 +3,6 @@
 </template>
 <script setup>
 import { onMounted } from "vue";
-//方法二，直接调用函数，调整高度,height表示物体离地面的高度
-function changeHeight(height) {
-  height = Number(height);
-  if (isNaN(height)) {
-    return;
-  }
-  var cartographic = Cesium.Cartographic.fromCartesian(
-    tileset.boundingSphere.center
-  );
-  var surface = Cesium.Cartesian3.fromRadians(
-    cartographic.longitude,
-    cartographic.latitude,
-    cartographic.height
-  );
-  var offset = Cesium.Cartesian3.fromRadians(
-    cartographic.longitude,
-    cartographic.latitude,
-    height
-  );
-  var translation = Cesium.Cartesian3.subtract(
-    offset,
-    surface,
-    new Cesium.Cartesian3()
-  );
-  tileset.modelMatrix = Cesium.Matrix4.fromTranslation(translation);
-}
 
 onMounted(() => {
   const viewer = new Cesium.Viewer("cesiumContainer", {
@@ -46,7 +20,7 @@ onMounted(() => {
   viewer.scene.debugShowFramesPerSecond = true;
   //加载3d tiles
   var tileset = new Cesium.Cesium3DTileset({
-    url: "./tileData/Scene/Production_4.json", //数据路径
+    url: "./tileData/Scene/Production_5.json", //数据路径
     maximumScreenSpaceError: 2, //最大的屏幕空间误差
     maximumNumberOfLoadedTiles: 1000, //最大加载瓦片个数
     // modelMatrix: m, //形状矩阵
@@ -71,7 +45,7 @@ onMounted(() => {
       viewer.scene.primitives.add(tileset);
 
       //移动到表面
-      const height = Number(0);
+      const height = Number(-36);
       const cartographic = Cesium.Cartographic.fromCartesian(
         tileset.boundingSphere.center
       );
@@ -91,7 +65,7 @@ onMounted(() => {
         new Cesium.Cartesian3()
       );
       tileset.modelMatrix = Cesium.Matrix4.fromTranslation(translation);
-      viewer.zoomTo(
+      viewer.flyTo(
         tileset,
         new Cesium.HeadingPitchRange(
           0.0,
